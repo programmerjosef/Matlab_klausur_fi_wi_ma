@@ -1,3 +1,4 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Einbinden der Tabellen %%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -15,6 +16,7 @@ max_torque = xlsread("Motorkennlinie.xlsx","C16:O16");
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%  Einbinden der Konstanten   %%%%%%%%%%%%%%%%%%%%%
+
 m = 2000;    %Masse [kg]
 p = 1.2;     %Luftdichte [kg/m^3]
 g = 9.81;    %Gewichtskraft [m/s^2]
@@ -34,7 +36,7 @@ Acceleration = out.Acceleration;
 
 GradAngle= out.GradAngle;
 
-AngVeloWheel = out.AngVeloWheel;
+AnglVeloWheel = out.AnglVeloWheel;
 
 TorqueWheel = out.TorqueWheel;
 
@@ -87,7 +89,7 @@ xlabel("Time (s)");
 ylabel("Gradient angle (radians)");
 
 nexttile;
-plot(Time, AngVeloWheel);
+plot(Time, AnglVeloWheel);
 title("Angular Velocity Wheel");
 grid on;
 xlabel("Time (s)");
