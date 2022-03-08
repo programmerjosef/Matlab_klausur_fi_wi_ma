@@ -7,12 +7,11 @@ Time = load("Zeit.txt");
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Einbinden der Motorkennlinie %%%%%%%%%%%%%%%%%%%%
 
-
-MKL_Daten = readmatrix("Motorkennlinie.xlsx","range", "C3:O13");
-MKL_Drehmoment = readmatrix("Motorkennlinie.xlsx","range", "B3:B13");
-MKL_Drehzahl = readmatrix("Motorkennlinie.xlsx","range", "C2:O2");
-MKL_MaxMoment = readmatrix("Motorkennlinie.xlsx","range", "C16:O16");
-load("MKL_Daten_max.mat");
+table_efficiency = xlsread("Motorkennlinie.xlsx","B2:O13");
+efficiency = xlsread("Motorkennlinie.xlsx","C3:O13");
+RPM = table_efficiency(1,2:14);
+torque = table_efficiency(2:12,1);
+max_torque = xlsread("Motorkennlinie.xlsx","C16:O16");
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%  Einbinden der Konstanten   %%%%%%%%%%%%%%%%%%%%%
