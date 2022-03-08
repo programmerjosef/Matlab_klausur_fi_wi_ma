@@ -48,13 +48,13 @@ AngVeloMotor = out.AngVeloMotor;
 
 PowerEMachine = out.PowerEMachine;
 
-GearRatio = out.GearRatio;
+Transmission = out.Transmission;
 
 GearRatioAllow = out.GearRatioAllow;
 
 GearRatioMax = out.GearRatioMax;
 
-RPMEMachine = out.RPMEMachine;
+RPM = out.RPM;
 
 close all;
 
@@ -145,7 +145,7 @@ hold on;
 
 title("Efficency factor (η) on the E-Maschine");
 
-scatter(RPMEMachine, abs(TorqueMotor),'.k');
+scatter(RPM, abs(TorqueMotor),'.k');
 xlabel("RPM (min^-^1)");
 ylabel("Torque at the motor (Nm)");
 zlabel("Efficency factor (η)");
