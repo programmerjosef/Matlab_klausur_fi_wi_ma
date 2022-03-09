@@ -13,6 +13,7 @@ efficiency = xlsread("Motorkennlinie.xlsx","C3:O13");
 RPM = table_efficiency(1,2:14);
 torque = table_efficiency(2:12,1);
 max_torque = xlsread("Motorkennlinie.xlsx","C16:O16");
+Drehzahl = xlsread("Motorkennlinie.xlsx", "C2:O2");
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%  Einbinden der Konstanten   %%%%%%%%%%%%%%%%%%%%%
