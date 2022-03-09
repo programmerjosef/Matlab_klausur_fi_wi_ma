@@ -2,9 +2,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Einbinden der Tabellen %%%%%%%%%%%%%%%%%%%%%%%
 
 
-Height = load("Hoehe.txt");
-Velocity = load("Geschwindigkeit.txt");
-Time = load("Zeit.txt");
+Height = load("Hoehenprofil.txt");
+Velocity = load("Geschwindigkeitprofil.txt");
+Time = load("Zeitprofil.txt");
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Einbinden der Motorkennlinie %%%%%%%%%%%%%%%%%%%%
 
@@ -13,25 +13,25 @@ efficiency = xlsread("Motorkennlinie.xlsx","C3:O13");
 RPM = table_efficiency(1,2:14);
 torque = table_efficiency(2:12,1);
 max_torque = xlsread("Motorkennlinie.xlsx","C16:O16");
-Drehzahl = xlsread("Motorkennlinie.xlsx", "C2:O2");
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%  Einbinden der Konstanten   %%%%%%%%%%%%%%%%%%%%%
 
-m = 2000;    %Masse [kg]
-p = 1.2;     %Luftdichte [kg/m^3]
-g = 9.81;    %Gewichtskraft [m/s^2]
-j = 0.14;    %Treägheitsmoment [kg*m^2]
-A = 2.5;     %Projizierte Stirnfläche [m^2]
-d = 0.6;     %Durchmesser Rad [m]
-cw = 0.4;    %Strömungswiderstandkoeffizient
-fr = 0.015;  %Rollwiderstandkoeffizient
-ng = 0.98;   %Wirkungsgrad des Getriebes
-P = 1050;    %Leistung der Verbraucher [W]
-i1 = 12.5;
-i2 = 5;
+m = 2000;             %Masse [kg]
+p = 1.2;              %Luftdichte [kg/m^3]
+g = 9.81;             %Gewichtskraft [m/s^2]
+J = 0.14;             %Treägheitsmoment [kg*m^2]
+A = 2.5;              %Projizierte Stirnfläche [m^2]
+d = 0.6;              %Durchmesser Rad [m]
+cw = 0.4;             %Strömungswiderstandkoeffizient
+f_roll = 0.015;       %Rollwiderstandkoeffizient
+n = 0.98;             %Wirkungsgrad des Getriebes
+P = 1050;             %Leistung der Verbraucher [W]
+i1 = 12.5;            %erster Gang Übersetzung
+i2 = 5;               %zweiter Gang Übersetzung
 
-out = sim("Simulink_Hausarbeit.slx");
+%out = sim("Simulink_Hausarbeit.slx");
 
 Acceleration = out.Acceleration;
 
